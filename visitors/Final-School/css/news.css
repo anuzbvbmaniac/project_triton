@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.news-section{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.news-section img{
+	width: 100%;
+}
+.news-section h3{
+	color: #0d58a5;
+	font-size: 25px;
+}
+
+.news-section p{
+	font-size: 18px;
+}
+.pagination {
+  margin-bottom: 15px;
+}

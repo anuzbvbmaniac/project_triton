@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+
+/* CSS Document */
+.about-1 h3{
+	text-align: center;
+	color: #0d58a5;
+	font-size: 200%;
+	padding: 20px;
+}
+
+@media(max-width: 468px){
+	.about-1 h3{
+		font-size: 150%;
+		text-align: justify;
+	}
+	
+	.about p{
+		text-align: justify;
+	}
+}

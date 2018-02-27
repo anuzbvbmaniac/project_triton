@@ -1,0 +1,17 @@
+.stream .row{
+	margin-top: 40px;
+	margin-bottom: 40px;
+	
+}
+.stream h1{
+	text-align: center;
+	color: #0d58a5;
+	font-weight: 600;
+}
+.stream p{
+	font-size: 16px;
+	text-align: center;
+}
+.stream img{
+	    width: 100%;
+}
