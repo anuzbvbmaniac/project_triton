@@ -1,72 +1,86 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Control Panel</title>
-	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../assets/css/bootstrap.css"/>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Triton School, College">
+        <meta name="keywords" content="Triton">
+        <meta name="author" content="Anuz Pandey">
+        
+        <!-- Title -->
+        <title>Triton - Admin Dashboard</title>
+
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="../assets/plugins/icomoon/style.css" rel="stylesheet">
+        <link href="../assets/plugins/uniform/css/default.css" rel="stylesheet"/>
+        <link href="../assets/plugins/switchery/switchery.min.css" rel="stylesheet"/>
+        <link href="../assets/plugins/nvd3/nv.d3.min.css" rel="stylesheet">  
+      
+        <!-- Theme Styles -->
+        <link href="../../assets/css/triton.css" rel="stylesheet">
+        <link href="../../assets/css/themes/admin.css" rel="stylesheet">
+        <link href="../../assets/css/custom.css" rel="stylesheet">
 </head>
+
 <body>
 	<?php
-//many wrong attempt
-	if(isset($_COOKIE['login_count'])){
-		if($_COOKIE['login_count']==3)
-		{
+	//many wrong attempt
+	if ( isset( $_COOKIE[ 'login_count' ] ) ) {
+		if ( $_COOKIE[ 'login_count' ] == 3 ) {
 			echo "You are blocked for 1 minutes because of many wrong attept..!!";
 			die();
 		}
 	}
 
-	if(isset($_GET['update']))
-	{
+	if ( isset( $_GET[ 'update' ] ) ) {
 		?>
-		<script type="text/javascript">
+	<script type="text/javascript">
+		alert( 'You have just Changed your password, please log in with your new password.' );
+	</script>
 
-			alert('You have just Changed your password, please log in with your new password.');
-		</script>
+	<?php
 
-		<?php
-		
 	}
 	?>
-	<div class="container">    
-		<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
-			<div class="panel panel-info" >
+	<div class="container">
+		<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+			<div class="panel panel-info">
 				<div class="panel-heading">
 					<div class="panel-title">Sign In</div>
 					<!-- <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div> -->
-				</div>     
-				<?php	
+				</div>
+				<?php
 				//Invalid Username or Password
-				if(isset($_GET['warning']))
-				{
+				if ( isset( $_GET[ 'warning' ] ) ) {
 					?>
-					<div class="alert alert-dismissible alert-danger">
-						<button type="button" class="close" data-dismiss="alert">&times;</button>
-						<?php
-						echo 'Invalid Username or Password';
-						?>
-					</div>
+				<div class="alert alert-dismissible alert-danger">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
 					<?php
+					echo 'Invalid Username or Password';
+					?>
+				</div>
+				<?php
 				}
 				?>
-				<?php	
-				
+				<?php
+
 
 				//Block Direct Access to dashboard(MSG)
-				if(isset($_GET['loginfirst']))
-				{
+				if ( isset( $_GET[ 'loginfirst' ] ) ) {
 					?>
-					<div class="alert alert-danger">
-						<?php
-						echo 'Please Login First';
-						?>
-					</div>
+				<div class="alert alert-danger">
 					<?php
+					echo 'Please Login First';
+					?>
+				</div>
+				<?php
 				}
 				?>
-				<div style="padding-top:30px" class="panel-body" >
+				<div style="padding-top:30px" class="panel-body">
 
 					<div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
 
@@ -74,7 +88,7 @@
 
 						<div style="margin-bottom: 25px" class="input-group">
 							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							<input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email" required="required">                                        
+							<input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email" required="required">
 						</div>
 
 						<div style="margin-bottom: 25px" class="input-group">
@@ -87,24 +101,25 @@
 								<label>
 									<input id="showPassword" onclick="functionShowPassword()" type="checkbox" name="showPassword" value="1"> Show Password
 								</label>
+							
 							</div>
 						</div>
 						<div style="margin-top:10px" class="form-group">
 							<!-- Button -->
 
 							<div class="col-sm-12 controls">
-								<input type="submit" id="btn-login" class="btn btn-success" name="login" value="Login" >
+								<input type="submit" id="btn-login" class="btn btn-success" name="login" value="Login">
 
 							</div>
 						</div>
-					</form>     
-				</div>               
-			</div>  
+					</form>
+				</div>
+			</div>
 		</div>
 		<script type="text/javascript">
 			function functionShowPassword() {
-				var x = document.getElementById("login-password");
-				if (x.type === "password") {
+				var x = document.getElementById( "login-password" );
+				if ( x.type === "password" ) {
 					x.type = "text";
 				} else {
 					x.type = "password";
@@ -112,9 +127,10 @@
 			}
 		</script>
 
-	</body>
-	</html>
-	<?php 
+</body>
+
+</html>
+<?php 
 	session_start();
 	require_once('../connection.php');
 	if(isset($_POST['login'])){
