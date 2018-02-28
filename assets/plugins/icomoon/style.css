@@ -24,6 +24,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.btn-blue{
+	background-color: #005baa;
+	color: #fff;
+}
+
 .icon-3d_rotation:before {
   content: "\e84d";
 }
