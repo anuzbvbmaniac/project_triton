@@ -16,7 +16,14 @@
 
   <!-- Overlay content -->
   <div class="overlay-content">
-		<img src="images/Banner-Advertising-720x300.png" alt="">
+    <?php 
+  require_once('connection.php');
+  $query_check = "SELECT * FROM tbl_banner";
+  $result = $conn->query( $query_check );
+  $data = $result->fetch_array();
+  $file=$data['banner_file'];
+     ?>
+		<img src="images/<?php echo $file; ?>" alt="">
   </div>
 
 </div>

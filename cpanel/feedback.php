@@ -19,7 +19,7 @@ include('navigation.php');
 				<?php
 			}
 
-			$feedback = "SELECT * FROM tbl_feedback";
+			$feedback = "SELECT * FROM tbl_feedback AS f, tbl_level AS l WHERE f.feedback_in=l.level_id";
 			$result = $conn->query($feedback);
 			?>
 		</div>
@@ -27,7 +27,9 @@ include('navigation.php');
 		<table class="table table-bordered" >
 			<tr class="heading">
 				<th>S/N</th>
+				<th>Feedback In (Level)</th>
 				<th>Name</th>
+				<th>Phone</th>
 				<th>Email</th>
 				<th>Message</th>
 				<th>Date</th>
@@ -42,8 +44,21 @@ include('navigation.php');
 				?>
 				<tr>
 					<td><?php echo ++$counter; ?></td>
+					<td><?php echo $data['level_name']; ?></td>
 					<td><?php echo $data['feedback_by']; ?></td>
-					<td><a href="https://mail.google.com"><?php echo $data['email']; ?></a></td>
+					<td><?php echo $data['phone']; ?></td>
+					<?php
+					if($data['email']=="Email Not Available"){
+						?>
+						<td><?php echo $data['email']; ?></td>
+						<?php
+					}else{
+						?>
+						<td><a href="https://mail.google.com"><?php echo $data['email']; ?></a></td>
+						<?php
+					}
+					?>
+					
 					<td><?php echo $data['feedback']; ?></td>
 					<td><?php echo $data['feedback_date']; ?></td>
 

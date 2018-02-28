@@ -1,3 +1,42 @@
+<?php
+
+if(isset($_GET['feedback']))
+{
+  ?>
+  <script type="text/javascript">
+
+    alert('Your Feedback has Sent !!');
+
+  </script>
+  <?php
+}
+
+if(isset($_POST['send'])){
+  require_once('../../connection.php');
+  $name = $_POST['name']; 
+  $level='2';
+  $phone = $_POST['phone']; 
+
+  if($_POST['email'] == TRUE){
+  $email = $_POST['email']; 
+  }else{
+    $email = 'Email Not Available';
+  }
+  
+  $message = $_POST['message']; 
+  $fulltime=date('Y-m-d H:i:s');
+
+
+  $send_feedback= "INSERT INTO tbl_feedback(feedback_id, feedback_in, feedback_by, phone,  email, feedback, feedback_date) VALUES (NULL, '$level', '$name', '$phone', '$email', '$message' ,'$fulltime')";
+
+  $conn->query($send_feedback);
+
+
+  header("location:contact.php?feedback=sent");
+  
+
+}
+?>
 <!doctype html>
 <html>
 <head>
@@ -80,35 +119,36 @@
   <h3></h3>
 </div>
 <div class="contact-section">
- <div class="container">
-  <form>
-   <div class="col-md-6  form-line">
-    <div class="form-group">
-     <label for="exampleInputUsername">Your name</label>
-     <input type="text" class="form-control" id="" placeholder=" Enter Name">
-   </div>
-   <div class="form-group">
-    <label for="exampleInputEmail">Email Address</label>
-    <input type="email" class="form-control" id="exampleInputEmail" placeholder=" Enter Email id">
-  </div>	
-  <div class="form-group">
-    <label for="telephone">Mobile No.</label>
-    <input type="tel" class="form-control" id="telephone" placeholder=" Enter 10-digit mobile no.">
+  <div class="container">
+    <form method="POST">
+      <div class="col-md-6  form-line">
+        <div class="form-group">
+          <label for="exampleInputUsername">Your name*</label>
+          <input class="form-control" type="text" id="name" name="name" required="required"placeholder=" Enter Name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail">Email Address(Optional)</label>
+          <input type="email" class="form-control" id="exampleInputEmail" name="email" placeholder=" Enter Email id">
+        </div>  
+        <div class="form-group">
+          <label for="telephone">Mobile No.*</label>
+          <input type="tel" name="phone" pattern="[9][0-9]{9}" class="form-control" id="telephone" required="required" placeholder=" Enter 10-digit mobile no.">
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for ="description"> Message*</label>
+          <textarea  class="form-control" name="message" id="description" required="required" placeholder="Enter Your Message"></textarea>
+        </div>
+        <div class="container-fluid">
+
+          <button name="send" formaction="contact.php" type="submit" class="btn btn-default submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
+        </div>
+
+      </div>
+    </form>
   </div>
-</div>
-
-<div class="col-md-6">
-  <div class="form-group">
-   <label for ="description"> Message</label>
-   <textarea  class="form-control" id="description" placeholder="Enter Your Message"></textarea>
- </div>
- <div>
-
-   <button type="button" class="btn btn-default submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
- </div>
- 
-</div>
-</form>
 </div>
 </section>
 <div class="map">

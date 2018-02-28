@@ -14,12 +14,20 @@ if(isset($_GET['feedback']))
 if(isset($_POST['send'])){
   require_once('../../connection.php');
   $name = $_POST['name']; 
+  $level='1';
+  $phone = $_POST['phone']; 
+
+  if($_POST['email'] == TRUE){
   $email = $_POST['email']; 
+  }else{
+    $email = 'Email Not Available';
+  }
+  
   $message = $_POST['message']; 
   $fulltime=date('Y-m-d H:i:s');
 
 
-  $send_feedback= "INSERT INTO tbl_feedback(feedback_id, feedback_by, email, feedback, feedback_date) VALUES (NULL, '$name', '$email', '$message' ,'$fulltime')";
+  $send_feedback= "INSERT INTO tbl_feedback(feedback_id, feedback_in, feedback_by, phone,  email, feedback, feedback_date) VALUES (NULL, '$level', '$name', '$phone', '$email', '$message' ,'$fulltime')";
 
   $conn->query($send_feedback);
 
@@ -88,15 +96,21 @@ if(isset($_POST['send'])){
       <input class="form-control" type="text" id="name" name="name" required="required" />
     </div>
 
-    <div class="formgroup" id="email-form">
-      <label for="email">Your e-mail*</label>
-      <input class="form-control" type="email" id="email" name="email" required="required" />
+     <div class="formgroup" id="phone-form">
+      <label for="phone">Your Phone*</label>
+      <input class="form-control" type="text" pattern="[9][0-9]{9}" id="phone" name="phone" required="required" />
     </div>
 
+    <div class="formgroup" id="email-form">
+      <label for="email">Your e-mail (Optional)</label>
+      <input class="form-control" type="email" id="email" name="email" />
+    </div>   
+
     <div class="formgroup" id="message-form">
-      <label for="message">Your message</label>
+      <label for="message">Your message*</label>
       <textarea class="form-control" id="message" name="message" required="required" pattern="(\w+\W+){0,49}\w+\W*"></textarea>
     </div>
+
 
     <input class="form-control" name="send" type="submit" value="Send your message!" />
   </form>

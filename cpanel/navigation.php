@@ -28,6 +28,7 @@
           <li><a href="changePassword.php">Change Password</a></li>
           <li><a href="notice.php">Notices</a></li>
           <li><a href="feedback.php">Feedbacks</a></li>
+          <li><a href="adBanner.php">Ad Banner</a></li>
         </ul>
       </li>
       <li><a href="logout.php">Log out</a></li>
