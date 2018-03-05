@@ -6,12 +6,33 @@ if (!isset($_SESSION['user_logged'])){
 
 ?>
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Update Message</title>
-	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../assets/css/bootstrap.css"/>
-</head>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Triton School, College">
+        <meta name="keywords" content="Triton">
+        <meta name="author" content="Anuz Pandey">
+        <!-- Title -->
+        <title>Triton - Notice > Update Notice</title>
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="../assets/plugins/icomoon/style.css" rel="stylesheet">
+        <link href="../assets/plugins/uniform/css/default.css" rel="stylesheet" />
+        <link href="../assets/plugins/switchery/switchery.min.css" rel="stylesheet" />
+        <link href="../assets/plugins/nvd3/nv.d3.min.css" rel="stylesheet">
+        <link href="../assets/plugins/switchery/switchery.min.css" rel="stylesheet" />
+        <link href="../assets/plugins/dropzone/dropzone.min.css" rel="stylesheet">
+        <link href="../assets/plugins/plupload/js/jquery.plupload.queue/css/jquery.plupload.queue.css" rel="stylesheet" type="text/css" />
+        <!-- Theme Sty -->
+        <link href="../assets/css/triton.css" rel="stylesheet">
+        <link href="../assets/css/themes/admin.css" rel="stylesheet">
+        <link href="../assets/css/custom.css" rel="stylesheet">
+    </head>
 <?php 
 
 if(isset($_GET['file']))

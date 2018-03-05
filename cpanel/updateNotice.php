@@ -52,7 +52,7 @@ if(isset($_GET['id'])){
 	while($data = $result->fetch_array())
 	{
 		?>
-			<body>
+<body>
 
         <div class="page-container">
             <!-- Page Sidebar -->
