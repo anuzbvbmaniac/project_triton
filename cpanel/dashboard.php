@@ -38,33 +38,79 @@
             <i class="fa fa-lock"></i>
             </a>
             <div class="page-sidebar-inner">
-               <div class="page-sidebar-menu">
-                  <ul class="accordion-menu">
-                     <li class="active-page">
-                        <a href="dashboard.php">
+                <div class="page-sidebar-menu">
+                    <ul class="accordion-menu">
+                        <li class="active-page">
+                            <a href="dashboard.php">
                         <i class="menu-icon icon-home4"></i><span>Dashboard</span>
                         </a>
-                     </li>
-                     <li>
-                        <a href="adBanner.php">
-                        <i class="menu-icon fa fa-image"></i><span>Ad-Setting</span>
+                        </li>
+						<li>
+                                <a href="javascript:void(0);">
+                                    <i class="menu-icon fa fa-id-card"></i><span>Faculty</span><i class="accordion-icon fa fa-angle-left"></i>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li><a href="plusTwoStream.php">+2</a></li>
+                                    <li><a href="bachelorFaculty.php">Bachelor</a></li>
+                                    <li><a href="masterFaculty.php">Master</a></li>
+                                </ul>
+                        </li>
+						<!--Medias-->
+						<li>
+                                <a href="javascript:void(0);">
+                                    <i class="menu-icon fa fa-image"></i><span>Medias</span><i class="accordion-icon fa fa-angle-left"></i>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li><a href="adBanner.php">Ad-Setting</a></li>
+                                    <li><a href="gallery.php">Gallery</a></li>
+                                    <li><a href="sliderImage.php">Slider Images</a></li>
+                                </ul>
+                        </li>
+						<!--News And Notices-->
+						<li>
+                                <a href="javascript:void(0);">
+                                    <i class="menu-icon fa fa-newspaper-o"></i><span>News & Notices</span><i class="accordion-icon fa fa-angle-left"></i>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li><a href="news.php">News</a></li>
+                                    <li><a href="notice.php">Notices</a></li>
+                                </ul>
+                        </li>
+						
+						<li>
+                            <a href="activity.php">
+                        <i class="menu-icon fa fa-play"></i><span>Activity</span>
                         </a>
-                     </li>
-                     <li class="menu-divider"></li>
-                     <li>
-                        <a href="#">
+                        </li>
+						
+
+                        </li>
+                        <li>
+                            <a href="aboutUs.php">
+                        <i class="menu-icon fa fa-adn"></i><span>About Us</span>
+                        </a>
+                        </li>
+						<li>
+                            <a href="feedback.php">
+                        <i class="menu-icon fa fa-feed"></i><span>Feedback</span>
+                        </a>
+                        </li>
+						
+                        <li class="menu-divider"></li>
+                        <li>
+                            <a href="#">
                         <i class="menu-icon icon-help_outline"></i><span>Documentation</span>
                         </a>
-                     </li>
-                     <li>
-                        <a href="#">
+                        </li>
+                        <li>
+                            <a href="#">
                         <i class="menu-icon icon-public"></i><span>Changelog</span><span class="label label-danger">1.0</span>
                         </a>
-                     </li>
-                  </ul>
-               </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-         </div>
+        </div>
          <!-- /Page Sidebar -->
          <!-- Page Content -->
          <div class="page-content">
@@ -121,7 +167,7 @@
                                  <li><a href="#">Profile</a></li>
                                  <li><a href="#"><span class="badge pull-right badge-danger">42</span>Messages</a></li>
                                  <li role="separator" class="divider"></li>
-                                 <li><a href="#">Account Settings</a></li>
+                                 <li><a href="changePassword.php">Account Settings</a>
                                  <li><a href="logout.php">Log Out</a></li>
                               </ul>
                            </li>

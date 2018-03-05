@@ -7,9 +7,9 @@ if(isset($_GET['key'])){
 	if($result = $conn->query($fetchDate)){	
 		$num=$result->num_rows; 
 		if($num>0){
-			echo "<span class='glyphicon glyphicon-ok' style='color:#00A41E;'></span> Password Match";
+			echo "<span class='fa fa-check' style='color:#00A41E;'></span> Password Match";
 		}else{
-			echo "<span class='glyphicon glyphicon-remove' style='color:#FF0004;'></span> Password Doesn't Match";
+			echo "<span class='fa fa-close' style='color:#FF0004;'></span> Password Doesn't Match";
 		}
 }else{
 		echo $conn->error;	

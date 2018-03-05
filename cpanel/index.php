@@ -88,7 +88,7 @@
 
 							<div class="form-group">
 								<label for="exampleInputEmail1">Username</label>
-								<input id="login-username" type="text" class="form-control" name="username" value="" placeholder="Username">
+								<input id="login-username" autofocus type="text" class="form-control" name="username" value="" placeholder="Username">
 							</div>
 							<div class="form-group">
 								<label for="exampleInputPassword1">Password</label>
