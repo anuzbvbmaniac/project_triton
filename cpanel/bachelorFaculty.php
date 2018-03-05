@@ -108,6 +108,11 @@ if(isset($_GET['update']))
                             <a href="welcomeMessage.php">
                         <i class="menu-icon fa fa-envelope"></i><span>Welcome Message</span>
                         </a>
+                        </li>
+						<li>
+                            <a href="welcomeMessage.php">
+                        <i class="menu-icon fa fa-envelope"></i><span>Welcome Message</span>
+                        </a>
 
                         </li>
                         <li>
