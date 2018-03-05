@@ -105,10 +105,7 @@ if(isset($_GET['id'])){
                         <i class="menu-icon fa fa-envelope"></i><span>Welcome Message</span>
                         </a>
                         </li>
-						<li>
-                            <a href="welcomeMessage.php">
-                        <i class="menu-icon fa fa-envelope"></i><span>Welcome Message</span>
-                        </a>
+
 
                             <li>
                                 <a href="activity.php">
@@ -117,7 +114,6 @@ if(isset($_GET['id'])){
                             </li>
 
 
-                            </li>
                             <li>
                                 <a href="aboutUs.php">
                         <i class="menu-icon fa fa-adn"></i><span>About Us</span>
