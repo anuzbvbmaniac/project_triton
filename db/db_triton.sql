@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 03, 2018 at 01:45 PM
+-- Generation Time: Mar 06, 2018 at 03:49 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -38,10 +38,10 @@ CREATE TABLE `tbl_aboutus` (
 --
 
 INSERT INTO `tbl_aboutus` (`abt_id`, `about_us_text`, `featured_image`, `abtus_level`) VALUES
-(1, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in++', 'e746ba051f1ea7c4dda1f6af353c5e29_Triton.png', 1),
-(2, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in', 'e746ba051f1ea7c4dda1f6af353c5e29_Triton.png', 2),
+(1, '                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in              ', '3096d30e30a64efa6eea359d8b9f4fc4_Triton.png', 1),
+(2, '                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in              ', '3de5e25db282adfff2dfa1e6e450dcf9_Triton.jpg', 2),
 (3, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.', 'a0306df3fffe7490931df8f584fac855_Triton.jpg', 3),
-(4, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in', 'e746ba051f1ea7c4dda1f6af353c5e29_Triton.png', 4);
+(4, '                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in      ++        ', 'b2fda9fd7048d50314e21a568bfbcfce_Triton.jpg', 4);
 
 -- --------------------------------------------------------
 
@@ -61,7 +61,7 @@ CREATE TABLE `tbl_activities` (
 --
 
 INSERT INTO `tbl_activities` (`act_id`, `activity`, `activity_detail`, `icon`) VALUES
-(1, 'Graphic Design+', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua++', '726bdb6845f25b532a60fb5ef63a23ce_Triton.png'),
+(1, 'Graphic Design', '                                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua                                                                  ', '726bdb6845f25b532a60fb5ef63a23ce_Triton.png'),
 (2, 'Graphic Design', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'bd5e14a9465f0500d76eedb1772cae5b_Triton.png'),
 (3, 'Graphic Design', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '52c7dd871cc437d9d773c56794318bc9_Triton.png');
 
@@ -84,7 +84,7 @@ CREATE TABLE `tbl_admin` (
 --
 
 INSERT INTO `tbl_admin` (`id`, `username`, `password`, `email`, `code`) VALUES
-(1, 'admin', '83c0d0c74531a878fa9942068eef3c29', 'magartsahveen@gmail.com', '');
+(1, 'admin', '1a1a6669515086fe4669623d1d0f2a3e', 'magartsahveen@gmail.com', '');
 
 -- --------------------------------------------------------
 
@@ -104,7 +104,7 @@ CREATE TABLE `tbl_bachelorfaculty` (
 --
 
 INSERT INTO `tbl_bachelorfaculty` (`faculty_id`, `faculty`, `description`, `featured_image`) VALUES
-(1, 'BBS', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.anuz', '279d811f1ef1e5304fbcfc63522b3ef6_Triton.jpg'),
+(1, 'BBS', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.anuz++', '279d811f1ef1e5304fbcfc63522b3ef6_Triton.jpg'),
 (2, 'BSW', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.', 'b83f93ba277ea6118a400d88ee55a2da_Triton.jpg'),
 (3, 'BA', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.', 'de0729d4f2aa355d88e3abdd79d2a7bd_Triton.jpg'),
 (4, 'BBM', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.sdsdsdssd', 'f5b1dd1008efb578733d08665f7cf88f_Triton.jpg');
@@ -125,7 +125,7 @@ CREATE TABLE `tbl_banner` (
 --
 
 INSERT INTO `tbl_banner` (`banner_id`, `banner_file`) VALUES
-(1, '63f33b642d2c0881743eed08ab4782f2_Trinton.png');
+(1, 'dcb54d280f1270b1d10c3101c8ebd110_Trinton.png');
 
 -- --------------------------------------------------------
 
@@ -150,8 +150,8 @@ CREATE TABLE `tbl_feedback` (
 INSERT INTO `tbl_feedback` (`feedback_id`, `feedback_in`, `feedback_by`, `phone`, `email`, `feedback`, `feedback_date`) VALUES
 (18, 3, 'Michelle George', '9876543454', 'sysamy@gmail.com', 'Modi aut cupidatat consectetur sint omnis saepe quia proident minus non laborum', '2018-02-28 15:35:47'),
 (19, 2, 'Anastasia Silva', '9751234565', 'Email Not Available', 'Quo consequatur et aut explicabo Nihil quo tempor eum aut saepe', '2018-02-28 15:43:07'),
-(20, 4, 'Tara Shields', '9865764332', 'bytisaqyh@hotmail.com', 'Debitis ipsa sunt cillum deserunt rerum tempor illo eligendi ad quia debitis consectetur magni dolor consequatur do facilis est', '2018-02-28 15:45:59'),
-(21, 1, 'Mannix Bowers', '9843647592', 'jycymyzume@yahoo.com', 'Voluptatem in sint iusto eos pariatur Incididunt commodo ratione elit tempora quo modi mollit incidunt incidunt deserunt voluptatibus vero', '2018-03-02 09:28:22');
+(21, 1, 'Mannix Bowers', '9843647592', 'jycymyzume@yahoo.com', 'Voluptatem in sint iusto eos pariatur Incididunt commodo ratione elit tempora quo modi mollit incidunt incidunt deserunt voluptatibus vero', '2018-03-02 09:28:22'),
+(22, 1, 'Sabin Thapa', '9843647592', 'xxx@xx.com', 'ddfdfdfdfsdfdsfdsfdfdsf dsfdsfdsfds dsfdsfdsf', '2018-03-06 15:47:15');
 
 -- --------------------------------------------------------
 
@@ -171,7 +171,7 @@ CREATE TABLE `tbl_gallery` (
 --
 
 INSERT INTO `tbl_gallery` (`image_id`, `image_name`, `description`, `image_in`) VALUES
-(6, '20ddcc58b3df17057d9cab940edddcf7_Triton.png', 'Tempor sunt quis tempora amet totamsabin', 2),
+(6, '13a1cf6f0b7a560fe1a85c9787cb4d3a_Triton.jpg', 'Tempor sunt quis tempora amet totamsabin', 2),
 (7, 'c483b67b115cfe66979840a90488d963_Triton.jpg', 'Et expedita commodi quo qui ut aut quaerat ea consequatur fugit qui quisquam magnam praesentium corr', 1),
 (8, '4aa19d0b1143a74ab37dd8f3e40248ed_Triton.jpg', 'Aut qui fuga Ex rerum possimus sed', 2),
 (9, '24fd303bc8d2b4a309ee81354dbae856_Triton.png', 'Consequatur Illo ipsam officia expedita quis quam quis aliqua Odio fuga Nisi dolorem in cillum', 2),
@@ -225,7 +225,7 @@ CREATE TABLE `tbl_masterfaculty` (
 --
 
 INSERT INTO `tbl_masterfaculty` (`faculty_id`, `faculty`, `description`, `featured_image`) VALUES
-(1, 'MA', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem++', '6292c713b9fcfa8461cfa6aff19b0b23_Triton.jpg'),
+(1, 'MA', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem', '611f60d2e574a4138f42263cb73bef94_Triton.jpg'),
 (2, 'MBS', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquamnuma eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem', '9a4646d049e4ab35035f111a17a98488_Triton.jpg');
 
 -- --------------------------------------------------------
@@ -248,7 +248,6 @@ CREATE TABLE `tbl_news` (
 --
 
 INSERT INTO `tbl_news` (`news_id`, `news_date`, `news_heading`, `news_content`, `featured_image`, `news_level`) VALUES
-(1, '2018-03-02 12:25:01', 'Velit quo dolores id qui earum duis nulla sed accusantium magni', 'Neque consequatur aut esse hic dolore in non aut ut alias reiciendis dolor rerum sed', '5b933a0948221a9c5a726f7a2f859bd7_Trinton.png', 1),
 (5, '2018-03-02 13:04:21', 'Lorem libero ab nostrud dolore aut quia amet laborum Odit', 'Explicabo Molestias occaecat dolorum ut voluptates porro aute qui facilis consequatur ut at et optio dolorem fugit consequatur', '1c495fcbf4efb71d379d6af549d5a24a_Trinton.png', 2),
 (6, '2018-03-02 18:19:17', 'Architecto delectus expedita quisquam magnam excepturi ', 'Molestiae fuga Voluptatem labore optio sed nihil odio aliqua Architecto in iure vero aut maiores voluptatem Dolorum veniam sunt', '03e0fa4b4ee78b8c7e4b6fd371f8342f_Trinton.png', 1),
 (7, '2018-03-02 18:20:03', 'Quasi laborum In quia dolore sint sed incididunt quis sequi officia autem vitae error', 'Culpa aliquid sunt ab nulla incididunt in et nulla laborum facere iure unde velit odio molestias quisquam harum', 'cc0c7e10501ae7adcb679802fbd59f98_Trinton.png', 1),
@@ -259,7 +258,8 @@ INSERT INTO `tbl_news` (`news_id`, `news_date`, `news_heading`, `news_content`, 
 (12, '2018-03-03 12:28:24', 'Quia officia vel consectetur voluptas', 'Vero sint exercitation sit voluptatem in cumque dolore vel ducimus rerum obcaecati id dolore obcaecati ullamco', 'news_default.jpg', 3),
 (13, '2018-03-03 12:56:48', 'Libero velit eos temporibus quaerat fugit quia consequat Aut adipisci mollit', 'Animi eos corrupti ut tempor ad lorem sed dolorem et quae', 'news_default.jpg', 4),
 (14, '2018-03-03 12:57:24', 'Exercitation ut officia facilis ad repudiandae velit dolor labore eos', 'Ut nobis quia est labore nostrum quo quasi lorem deserunt ut distinctio Laborum Ut id omnis eum', '54013f32769e58ae9f89c038c77c3c37_Trinton.png', 4),
-(15, '2018-03-03 12:57:33', 'Quia sed adipisicing mollitia est officiis reiciendis', 'Omnis omnis quidem placeat rem', 'news_default.jpg', 4);
+(15, '2018-03-03 12:57:33', 'Quia sed adipisicing mollitia est officiis reiciendis', 'Omnis omnis quidem placeat rem', 'news_default.jpg', 4),
+(16, '2018-03-06 06:16:57', 'Assumenda et anim aperiam ipsum quia quisquam eaque veniam dolore rem delectus dolores officiis eum voluptatem aut suscipit eius etsabin', 'Deserunt dolor occaecat id duis et dolores laboris illo quia', '1ec6c923fd19d36c80450ccf0f157ba6_Trinton.png', 1);
 
 -- --------------------------------------------------------
 
@@ -284,7 +284,7 @@ INSERT INTO `tbl_notice` (`notice_id`, `notice_for`, `notice`, `notice_content`,
 (19, 2, 'Aut veniam eveniet autem sunt incidunt quod rerum eos fugiat amet dolorem minim rem aut qui ratione dolores sint', 'Accusantium ex ad blanditiis velit accusantium minima officia doloribus officiis', '2018-03-02', 'b559309d39231c1b2f0b7d2c205823a6_Trinton.png'),
 (20, 4, 'Tempor et reprehenderit incididunt enim beatae ducimus et repellendus Laboriosam', 'Placeat consequat Sunt sint sed voluptate est ullam', '2018-03-02', 'File Not Added'),
 (21, 3, 'Velit Nam itaque qui soluta duis earum praesentium laboriosam deleniti deserunt amet voluptas quibusdam', 'Aspernatur id ullam nihil ullam ex rerum hic delectus molestiae quia', '2018-03-02', '401d31638ccc48c7dc28044473feeb21_Trinton.png'),
-(22, 1, 'Id aut non reprehenderit voluptas velit sint elit molestiae ad', 'Et nisi laboriosam aut similique dolorum ipsa duis dolore cupidatat ut', '2018-03-02', '0b39fc4701b2301f2245beb5f5fb2589_Trinton.jpg'),
+(22, 1, 'Id aut non reprehenderit voluptas velit sint elit molestiae ad+', 'Et nisi laboriosam aut similique dolorum ipsa duis dolore cupidatat ut-', '2018-03-02', '0b39fc4701b2301f2245beb5f5fb2589_Trinton.jpg'),
 (23, 2, 'Minima amet vel quasi mollitia molestiae maiores', 'Quis voluptas consequatur aut et odio enim sit nostrum enim sint pariatur', '2018-03-02', 'File Not Added');
 
 -- --------------------------------------------------------
@@ -305,9 +305,9 @@ CREATE TABLE `tbl_plustwostream` (
 --
 
 INSERT INTO `tbl_plustwostream` (`stream_id`, `stream_name`, `description`, `featured_image`) VALUES
-(1, 'Science', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in++', '8a6734c284efd50862077cf665e73abb_Triton.png'),
-(2, 'Management', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in', 'f6338760fee3cd075b6f5a0c45c24935_Triton.png'),
-(3, 'Humanities', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in', 'ae2be837427ed79602e603f6489ef4e1_Triton.png');
+(1, 'Science', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in++', '164cfe3882cbed63bbcff77a6844599f_Triton.png'),
+(2, 'Management', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor iSabin', 'f6338760fee3cd075b6f5a0c45c24935_Triton.png'),
+(3, 'Humanities', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor inNuma', 'ae2be837427ed79602e603f6489ef4e1_Triton.png');
 
 -- --------------------------------------------------------
 
@@ -326,7 +326,7 @@ CREATE TABLE `tbl_sliderimage` (
 --
 
 INSERT INTO `tbl_sliderimage` (`image_id`, `image_name`, `level_image`) VALUES
-(1, 'd59e8878ef84f36819d3a3d49f503d40_Triton.jpg', 1),
+(1, '445a9e25c6323dd4cac6aa3cf506c5cd_Triton.png', 1),
 (2, 'c65e29954d9fe5ab80124a82fbae6609_Triton.png', 1),
 (3, 'ecd96feb16154b6d139c8fcc2a9b33ac_Triton.jpg', 1),
 (4, '94326b56800b0587d5087f4feb49f72a_Triton.jpg', 2),
@@ -371,7 +371,7 @@ CREATE TABLE `tbl_wlcmmsg` (
 
 INSERT INTO `tbl_wlcmmsg` (`msg_id`, `msg`, `image`, `level`) VALUES
 (1, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in Triton Triton Triton', '7d182d6830905e86b798a3b36d8f9609_Triton.png', 1),
-(2, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.', 'skdskdjs', 2),
+(2, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.ss', '3999fbaea71c22f67f59243379877078_Triton.jpg', 2),
 (3, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.', 'sjdhsjdh', 3),
 (4, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.', 'djsdjshds', 4);
 
@@ -502,7 +502,7 @@ ALTER TABLE `tbl_banner`
 -- AUTO_INCREMENT for table `tbl_feedback`
 --
 ALTER TABLE `tbl_feedback`
-  MODIFY `feedback_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `feedback_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `tbl_gallery`
 --
@@ -522,7 +522,7 @@ ALTER TABLE `tbl_masterfaculty`
 -- AUTO_INCREMENT for table `tbl_news`
 --
 ALTER TABLE `tbl_news`
-  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `tbl_notice`
 --
@@ -537,7 +537,7 @@ ALTER TABLE `tbl_plustwostream`
 -- AUTO_INCREMENT for table `tbl_sliderimage`
 --
 ALTER TABLE `tbl_sliderimage`
-  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `tbl_stream`
 --

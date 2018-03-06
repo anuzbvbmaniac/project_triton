@@ -1,14 +1,13 @@
 <?php 
-session_start();
 require_once('../connection.php');
 
+session_start();
 if (!isset($_SESSION['user_logged'])){
-	header('Location:index.php?loginfirst=yes');
+    header('Location:index.php?loginfirst=yes');
 }
 if(isset($_POST['update'])){
     
-    $activity = $_POST['activity']; 
-    $activity_detail = $_POST['activity_detail'];   
+    $description = $_POST['description'];   
     $id=$_POST['id'];
     
     if($_FILES['file']['name'] == TRUE){
@@ -22,23 +21,23 @@ if(isset($_POST['update'])){
 
         if($ext=='gif'|| $ext =='png' || $ext=='jpg'){
 
-            move_uploaded_file($_FILES['file']['tmp_name'],'activityImage/'.$new_name);
+            move_uploaded_file($_FILES['file']['tmp_name'],'bachelorFacultyImage/'.$new_name);
 
-            unlink("activityImage/".$oldFile);
+            unlink("bachelorFacultyImage/".$oldFile);
 
-            $update= "UPDATE tbl_activities SET activity='$activity', activity_detail='$activity_detail',  icon='$new_name' WHERE act_id='$id'";
+            $update= "UPDATE tbl_bachelorFaculty SET description='$description',  featured_image='$new_name' WHERE faculty_id='$id'";
 
             $conn->query($update);
 
-            header("location:activity.php?update=success");
+            header("location:bachelorFaculty.php?update=success");
         }else{
-            header("location:updateActivity.php?file=fail");
+            header("location:updatebachelorFaculty.php?file=fail");
         }
     }else{
-        $update= "UPDATE tbl_activities SET activity='$activity', activity_detail='$activity_detail' WHERE act_id='$id'";
+        $update= "UPDATE tbl_bachelorFaculty SET description='$description' WHERE faculty_id='$id'";
 
         $conn->query($update);
-        header("location:activity.php?update=success");
+        header("location:bachelorFaculty.php?update=success");
     }
 
 }
@@ -54,7 +53,7 @@ if(isset($_POST['update'])){
     <meta name="keywords" content="Triton">
     <meta name="author" content="Anuz Pandey">
     <!-- Title -->
-    <title>Triton - Bachelor Faculty</title>
+    <title>Triton - bachelor Streams Update</title>
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -75,20 +74,20 @@ if(isset($_POST['update'])){
 
 if(isset($_GET['file']))
 {
-	?>
+    ?>
     <script type="text/javascript">
+
         alert("Invalid File Format selected..!!!");
     </script>
     <?php
 }
 if(isset($_GET['id'])){
-	$id=$_GET['id'];
-	$query_check = "SELECT * FROM tbl_activities WHERE act_id='$id'";
-	$result = $conn->query( $query_check );
-	while($data = $result->fetch_array())
-	{
-		?>
-
+    $id=$_GET['id'];
+    $query_check = "SELECT * FROM tbl_bachelorFaculty WHERE faculty_id='$id'";
+    $result = $conn->query( $query_check );
+    while($data = $result->fetch_array())
+    {
+        ?>
         <body>
 
             <div class="page-container">
@@ -103,132 +102,132 @@ if(isset($_GET['id'])){
                             <ul class="accordion-menu">
                                 <li>
                                     <a href="dashboard.php">
-                                        <i class="menu-icon icon-home4"></i><span>Dashboard</span>
-                                    </a>
-                                </li>
-                                <li class="active-page">
-                                    <a href="javascript:void(0);">
-                                        <i class="menu-icon fa fa-id-card"></i><span>Faculty</span><i class="accordion-icon fa fa-angle-left"></i>
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li><a href="plusTwoStream.php">+2</a></li>
-                                        <li><a class="active" href="bachelorFaculty.php">Bachelor</a></li>
-                                        <li><a href="masterFaculty.php">Master</a></li>
-                                    </ul>
-                                </li>
-                                <!--Medias-->
-                                <li class="">
-                                    <a href="javascript:void(0);">
-                                        <i class="menu-icon fa fa-image"></i><span>Medias</span><i class="accordion-icon fa fa-angle-left"></i>
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li class=""><a class="" href="adBanner.php">Ad-Setting</a></li>
-                                        <li><a href="gallery.php">Gallery</a></li>
-                                        <li><a href="sliderImage/.php">Slider Images</a></li>
-                                    </ul>
-                                </li>
-                                <!--News And Notices-->
-                                <li>
-                                    <a href="javascript:void(0);">
-                                        <i class="menu-icon fa fa-newspaper-o"></i><span>News & Notices</span><i class="accordion-icon fa fa-angle-left"></i>
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li><a href="news.php">News</a></li>
-                                        <li><a href="notice.php">Notices</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="welcomeMessage.php">
-                                        <i class="menu-icon fa fa-envelope"></i><span>Welcome Message</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="activity.php">
-                                        <i class="menu-icon fa fa-play"></i><span>Activity</span>
-                                    </a>
-                                </li>
-
-
-                            </li>
-                            <li>
-                                <a href="aboutUs.php">
-                                    <i class="menu-icon fa fa-adn"></i><span>About Us</span>
+                                       <i class="menu-icon icon-home4"></i><span>Dashboard</span>
+                                   </a>
+                               </li>
+                               <li class="active-page">
+                                <a href="javascript:void(0);">
+                                    <i class="menu-icon fa fa-id-card"></i><span>Faculty</span><i class="accordion-icon fa fa-angle-left"></i>
                                 </a>
+                                <ul class="sub-menu">
+                                    <li><a href="plusTwoStream.php">+2</a></li>
+                                    <li><a href="bachelorFaculty.php">Bachelor</a></li>
+                                    <li><a class="active" href="bachelorFaculty.php">Master</a></li>
+                                </ul>
+                            </li>
+                            <!--Medias-->
+                            <li class="">
+                                <a href="javascript:void(0);">
+                                    <i class="menu-icon fa fa-image"></i><span>Medias</span><i class="accordion-icon fa fa-angle-left"></i>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class=""><a class="" href="adBanner.php">Ad-Setting</a></li>
+                                    <li><a href="gallery.php">Gallery</a></li>
+                                    <li><a href="sliderImage/.php">Slider Images</a></li>
+                                </ul>
+                            </li>
+                            <!--News And Notices-->
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <i class="menu-icon fa fa-newspaper-o"></i><span>News & Notices</span><i class="accordion-icon fa fa-angle-left"></i>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li><a href="news.php">News</a></li>
+                                    <li><a href="notice.php">Notices</a></li>
+                                </ul>
                             </li>
                             <li>
-                                <a href="feedback.php">
-                                    <i class="menu-icon fa fa-feed"></i><span>Feedback</span>
+                                <a href="welcomeMessage.php">
+                                    <i class="menu-icon fa fa-envelope"></i><span>Welcome Message</span>
                                 </a>
                             </li>
 
-                            <li class="menu-divider"></li>
                             <li>
-                                <a href="#">
-                                    <i class="menu-icon icon-help_outline"></i><span>Documentation</span>
+                                <a href="activity.php">
+                                    <i class="menu-icon fa fa-play"></i><span>Activity</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="#">
-                                    <i class="menu-icon icon-public"></i><span>Changelog</span><span class="label label-danger">1.0</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+
+
+                        </li>
+                        <li>
+                            <a href="aboutUs.php">
+                                <i class="menu-icon fa fa-adn"></i><span>About Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="feedback.php">
+                                <i class="menu-icon fa fa-feed"></i><span>Feedback</span>
+                            </a>
+                        </li>
+
+                        <li class="menu-divider"></li>
+                        <li>
+                            <a href="#">
+                                <i class="menu-icon icon-help_outline"></i><span>Documentation</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="menu-icon icon-public"></i><span>Changelog</span><span class="label label-danger">1.0</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <!-- /Page Sidebar -->
-            <!-- Page Content -->
-            <div class="page-content">
-                <!-- Page Header -->
-                <div class="page-header">
-                    <!--Search Form-->
-                    <div class="search-form">
-                        <form action="#" method="GET">
-                            <div class="input-group">
-                                <input type="text" name="search" class="form-control search-input" placeholder="Type something...">
-                                <span class="input-group-btn">
-                                   <button class="btn btn-default" id="close-search" type="button"><i class="icon-close"></i></button>
-                               </span>
-                           </div>
-                       </form>
-                   </div>
-                   <!--// search form-->
-                   <nav class="navbar navbar-default">
-                    <div class="container-fluid">
-                        <!-- Brand and toggle get grouped for better mobile display -->
-                        <div class="navbar-header">
-                            <div class="logo-sm">
-                                <a href="javascript:void(0)" id="sidebar-toggle-button"><i class="fa fa-bars"></i></a>
-                                <a class="logo-box" href="index.html"><span>Triton</span></a>
-                            </div>
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                               <i class="fa fa-angle-down"></i>
-                           </button>
-                       </div>
-                       <!-- Collect the nav links, forms, and other content for toggling -->
-                       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li><a href="javascript:void(0)" id="collapsed-sidebar-toggle-button"><i class="fa fa-bars"></i></a>
-                            </li>
-                            <li><a href="javascript:void(0)" id="toggle-fullscreen"><i class="fa fa-expand"></i></a>
-                            </li>
-                            <li><a href="javascript:void(0)" id="search-button"><i class="fa fa-search"></i></a>
-                            </li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="javascript:void(0)" class="right-sidebar-toggle" data-sidebar-id="main-right-sidebar"><i class="fa fa-envelope"></i></a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell"></i></a>
-                                <ul class="dropdown-menu dropdown-lg dropdown-content">
-                                    <li class="drop-title">Notifications<a href="#" class="drop-title-link"><i class="fa fa-angle-right"></i></a>
-                                    </li>
-                                    <li class="slimscroll dropdown-notifications">
-                                        <ul class="list-unstyled dropdown-oc">
-                                            <li>
-                                                <a href="#"><span class="notification-badge bg-primary"><i class="fa fa-check"></i></span>
-                                                 <span class="notification-info">Finished uploading Triton Project <b>"Triton Project"</b>.
+        </div>
+        <!-- /Page Sidebar -->
+        <!-- Page Content -->
+        <div class="page-content">
+            <!-- Page Header -->
+            <div class="page-header">
+                <!--Search Form-->
+                <div class="search-form">
+                    <form action="#" method="GET">
+                        <div class="input-group">
+                            <input type="text" name="search" class="form-control search-input" placeholder="Type something...">
+                            <span class="input-group-btn">
+                             <button class="btn btn-default" id="close-search" type="button"><i class="icon-close"></i></button>
+                         </span>
+                     </div>
+                 </form>
+             </div>
+             <!--// search form-->
+             <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <div class="logo-sm">
+                            <a href="javascript:void(0)" id="sidebar-toggle-button"><i class="fa fa-bars"></i></a>
+                            <a class="logo-box" href="index.html"><span>Triton</span></a>
+                        </div>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                         <i class="fa fa-angle-down"></i>
+                     </button>
+                 </div>
+                 <!-- Collect the nav links, forms, and other content for toggling -->
+                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="javascript:void(0)" id="collapsed-sidebar-toggle-button"><i class="fa fa-bars"></i></a>
+                        </li>
+                        <li><a href="javascript:void(0)" id="toggle-fullscreen"><i class="fa fa-expand"></i></a>
+                        </li>
+                        <li><a href="javascript:void(0)" id="search-button"><i class="fa fa-search"></i></a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="javascript:void(0)" class="right-sidebar-toggle" data-sidebar-id="main-right-sidebar"><i class="fa fa-envelope"></i></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell"></i></a>
+                            <ul class="dropdown-menu dropdown-lg dropdown-content">
+                                <li class="drop-title">Notifications<a href="#" class="drop-title-link"><i class="fa fa-angle-right"></i></a>
+                                </li>
+                                <li class="slimscroll dropdown-notifications">
+                                    <ul class="list-unstyled dropdown-oc">
+                                        <li>
+                                            <a href="#"><span class="notification-badge bg-primary"><i class="fa fa-check"></i></span>
+                                               <span class="notification-info">Finished uploading Triton Project <b>"Triton Project"</b>.
                                                   <small class="notification-date">20:00</small>
                                               </span></a>
                                           </li>
@@ -261,50 +260,45 @@ if(isset($_GET['id'])){
     <!-- Page Inner -->
     <div class="page-inner">
         <div class="page-title">
-            <h3 class="breadcrumb-header">Update Faculty || Bachelors </h3>
+            <h3 class="breadcrumb-header">Update Streams || Bachelor <i class="fa"></i></h3>
         </div>
         <div id="main-wrapper">
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel panel-white">
-                        <form lpformnum="1" method="POST" enctype="multipart/form-data">
-                            <fieldset>
-                                <legend>Update Activity Details</legend>
-                                <input type="hidden" name="id" value="<?php echo $data['act_id']?>" />
-                                <input type="hidden" name="oldFile" value="<?php echo $data['icon']?>" />
+                        <form lpformnum="1"  method="POST" enctype = "multipart/form-data">
+                         <fieldset>
+                          <legend>Update Stream Info</legend>
+                          <input type="hidden" name="id" value="<?php echo $data['faculty_id']?>"/>
+                          <input type="hidden" name="oldFile" value="<?php echo $data['featured_image']?>"/>
 
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Activity</label>
-                                    <input type="text" required="required" name="activity" class="form-control" id="" aria-describedby="" value="<?php echo $data['activity']; ?>" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+                          <div class="form-group">
+                           <label for="exampleInputEmail1">About Us-Text</label>
+                           <textarea type="text" required="required" name="description" class="form-control" id="" aria-describedby=""  cols="30 " rows="8"><?php echo $data['description']; ?></textarea> 
 
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Activity Detail</label>
-                                    <textarea type="text" required="required" name="activity_detail" class="form-control" id="" aria-describedby="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;"><?php echo $data['activity_detail']; ?></textarea>
+                       </div>
 
-                                </div>
+                       <div class="form-group">
+                           <label for="exampleInputFile">Image</label>
+                           <input type="file" name="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                           <small id="fileHelp" class="form-text text-muted">If you want to update Cover Image for Stream page, Upload from here.</small>
+                       </div>
 
-                                <div class="form-group">
-                                    <label for="exampleInputFile">Image</label>
-                                    <input type="file" name="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-                                    <small id="fileHelp" class="form-text text-muted">If you want to update Icon/Image for activity Section, Upload from here.</small>
-                                </div>
-
-                            </fieldset>
-                            <button type="submit" name="update" class="btn btn-primary">Update</button>
-                        </fieldset>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="page-footer">
-      <style>
-      .namawebaAnuz:hover{
-       color: gold;
-   }
+                   </fieldset>
+                   <button type="submit" name="update" class="btn btn-primary">Update</button>
+               </fieldset>
+           </form>
+       </div>
+   </div>
+</div>
+</div>
+<div class="page-footer">
+  <style>
+  .namawebaAnuz:hover{
+     color: gold;
+ }
 </style>
-<p>Made with <i class="fa fa-heart red-color"></i> by <a target="_blank" class="namawebaAnuz" href="https://www.linkedin.com/in/anuj-pandey-832620138/">Anuz Pandey</a></p>
+<p>Made with <i class="fa fa-heart red-color"></i> by <a target="_blank" class="namawebaAnuz" href="https://www.linkedin.com/in/anuz-pandey123">Anuz Pandey</a></p>
 </div>
 </div>
 </div>

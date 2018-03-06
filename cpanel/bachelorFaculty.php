@@ -109,12 +109,7 @@ if(isset($_GET['update']))
                         <i class="menu-icon fa fa-envelope"></i><span>Welcome Message</span>
                         </a>
                         </li>
-						<li>
-                            <a href="welcomeMessage.php">
-                        <i class="menu-icon fa fa-envelope"></i><span>Welcome Message</span>
-                        </a>
-
-                        </li>
+					
                         <li>
                             <a href="activity.php">
                         <i class="menu-icon fa fa-play"></i><span>Activity</span>

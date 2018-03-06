@@ -24,8 +24,9 @@ if(isset($_POST['update'])){
         if($ext=='gif'|| $ext =='png' || $ext=='jpg'){
 
             move_uploaded_file($_FILES['file']['tmp_name'],'newsImage/'.$new_name);
-
-            unlink("newsImage/".$oldFile);
+            if ($oldFile!='news_default.jpg') {
+               unlink("newsImage/".$oldFile);
+            }
 
             $insert= "UPDATE tbl_news SET news_heading='$headline', news_content='$news_content', news_level='$level', featured_image='$new_name' WHERE news_id='$id'";
 

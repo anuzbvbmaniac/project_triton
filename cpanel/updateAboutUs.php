@@ -5,7 +5,7 @@ require_once('../connection.php');
 if (!isset($_SESSION['user_logged'])){
 	header('Location:index.php?loginfirst=yes');
 }
-if(isset($_POST['update'])){
+if(isset($_POST['publish'])){
   
   $about_us_text = $_POST['about_us_text']; 
   $id=$_POST['id'];
