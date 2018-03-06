@@ -1,9 +1,38 @@
 <?php 
 session_start();
+require_once('../connection.php');
+
 if (!isset($_SESSION['user_logged'])){
 	header('Location:index.php?loginfirst=yes');
 }
+if(isset($_POST['update'])){
 
+   $id=$_POST['id'];
+   
+   $oldFile=$_POST['oldFile'];
+
+   $fname = $_FILES['file']['name'];
+   $ext = pathinfo($fname, PATHINFO_EXTENSION);
+   $date= date('Y=m-d H:i:s');
+
+   $new_name = md5(uniqid($date,true))."_Triton.".$ext;
+
+   if($ext=='gif'|| $ext =='png' || $ext=='jpg'){
+
+      move_uploaded_file($_FILES['file']['tmp_name'],'sliderImage/'.$new_name);
+
+      unlink("sliderImage/".$oldFile);
+
+      $update= "UPDATE tbl_sliderimage SET  image_name='$new_name' WHERE image_id='$id'";
+
+      $conn->query($update);
+
+      header("location:sliderImage.php?update=success");
+   }else{
+      header("location:updateSliderImage.php?file=fail");
+   }
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,36 +62,35 @@ if (!isset($_SESSION['user_logged'])){
    <link href="../assets/css/custom.css" rel="stylesheet">
 </head>
 <body>
-<?php 
+   <?php 
 
-if(isset($_GET['file']))
-{
-	?>
-	<script type="text/javascript">
+   if(isset($_GET['file']))
+   {
+     ?>
+     <script type="text/javascript">
 
-		alert("Invalid File Format selected..!!!");
-	</script>
-	<?php
-}
-require_once('../connection.php');
-if(isset($_GET['id'])){
-	$id=$_GET['id'];
-	$query_check = "SELECT * FROM tbl_sliderImage WHERE image_id='$id'";
-	$result = $conn->query( $query_check );
-	while($data = $result->fetch_array())
-	{
-		?>
-<!-- Page Container -->
-<div class="page-container">
-   <!-- Page Sidebar -->
-   
-   <!-- /Page Sidebar -->
-   <!-- Page Content -->
-	<style>
-		.page-content{
-			width: 100% !important;
-		}
-	</style>
+       alert("Invalid File Format selected..!!!");
+    </script>
+    <?php
+ }
+ if(isset($_GET['id'])){
+  $id=$_GET['id'];
+  $query_check = "SELECT * FROM tbl_sliderImage WHERE image_id='$id'";
+  $result = $conn->query( $query_check );
+  while($data = $result->fetch_array())
+  {
+    ?>
+    <!-- Page Container -->
+    <div class="page-container">
+      <!-- Page Sidebar -->
+      
+      <!-- /Page Sidebar -->
+      <!-- Page Content -->
+      <style>
+      .page-content{
+         width: 100% !important;
+      }
+   </style>
    <div class="page-content">
       <!-- Page Header -->
       <div class="page-header">
@@ -92,62 +120,62 @@ if(isset($_GET['id'])){
                </div>
                <!-- Collect the nav links, forms, and other content for toggling -->
                
-                  <!-- /.navbar-collapse -->
-               </div>
-               <!-- /.container-fluid -->
-            </nav>
-         </div>
-         <!-- /Page Header -->
-         <!-- Page Inner -->
-	   
-         <div class="page-inner">
-            <div class="page-title">
-				<a class="btn btn-danger" href="sliderImage.php">  BACK</a>
-               <h3 class="breadcrumb-header">Change Slider Image <i class="fa fa-image"></i></h3>
+               <!-- /.navbar-collapse -->
             </div>
-            <div id="main-wrapper">
-               <div class="row">
-                  <div class="col-md-12">
-                     <div class="panel panel-white">
-                        <div class="panel-heading clearfix">
-                           <h4 class="panel-title">Slider Photo</h4>
-                        </div>
-
-                        <div class="panel-body">
-                           <form lpformnum="1" method="POST" enctype = "multipart/form-data">
-                              <div class="form-group">
-								<input type="hidden" name="id" value="<?php echo $data['image_id']?>"/>
-								<input type="hidden" name="oldFile" value="<?php echo $data['image_name']?>"/>
-								  
-                                 <input type="file" name="file" required="required" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-                                 <small id="fileHelp" class="form-text text-muted">You can change slider photo anytime with any image file .</small>
-                              </div>
-                              <button type="submit" name="update" class="btn btn-primary">Update</button>
-                              
-                           </form>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- Row -->
-            </div>
-            <!-- Main Wrapper -->
-            <div class="page-footer">
-               <style>
-               .namawebaAnuz:hover {
-                  color: gold;
-                  transition: 0.5s ease;
-               }
-            </style>
-            <p>Made with <i class="fa fa-heart red-color"></i> by <a target="_blank" class="namawebaAnuz" href="https://www.linkedin.com/in/anuj-pandey-832620138/">Anuz Pandey</a>
-            </p>
-         </div>
+            <!-- /.container-fluid -->
+         </nav>
       </div>
-      <!-- /Page Inner -->
-   </div>
-   <!-- /Page Content -->
+      <!-- /Page Header -->
+      <!-- Page Inner -->
+      
+      <div class="page-inner">
+         <div class="page-title">
+           <a class="btn btn-danger" href="sliderImage.php">  BACK</a>
+           <h3 class="breadcrumb-header">Change Slider Image <i class="fa fa-image"></i></h3>
+        </div>
+        <div id="main-wrapper">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="panel panel-white">
+                  <div class="panel-heading clearfix">
+                     <h4 class="panel-title">Slider Photo</h4>
+                  </div>
+
+                  <div class="panel-body">
+                     <form lpformnum="1" method="POST" enctype = "multipart/form-data">
+                        <div class="form-group">
+                         <input type="hidden" name="id" value="<?php echo $data['image_id']?>"/>
+                         <input type="hidden" name="oldFile" value="<?php echo $data['image_name']?>"/>
+                         
+                         <input type="file" name="file" required="required" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                         <small id="fileHelp" class="form-text text-muted">You can change slider photo anytime with any image file .</small>
+                      </div>
+                      <button type="submit" name="update" class="btn btn-primary">Update</button>
+                      
+                   </form>
+                </div>
+             </div>
+          </div>
+       </div>
+       <!-- Row -->
+    </div>
+    <!-- Main Wrapper -->
+    <div class="page-footer">
+      <style>
+      .namawebaAnuz:hover {
+         color: gold;
+         transition: 0.5s ease;
+      }
+   </style>
+   <p>Made with <i class="fa fa-heart red-color"></i> by <a target="_blank" class="namawebaAnuz" href="https://www.linkedin.com/in/anuj-pandey-832620138/">Anuz Pandey</a>
+   </p>
 </div>
-		<?php
+</div>
+<!-- /Page Inner -->
+</div>
+<!-- /Page Content -->
+</div>
+<?php
 }
 }
 ?>
@@ -167,32 +195,5 @@ if(isset($_GET['id'])){
 </html>
 <?php 
 
-if(isset($_POST['update'])){
 
-	$id=$_POST['id'];
-	
-	$oldFile=$_POST['oldFile'];
-
-	$fname = $_FILES['file']['name'];
-	$ext = pathinfo($fname, PATHINFO_EXTENSION);
-	$date= date('Y=m-d H:i:s');
-
-	$new_name = md5(uniqid($date,true))."_Triton.".$ext;
-
-	if($ext=='gif'|| $ext =='png' || $ext=='jpg'){
-
-		move_uploaded_file($_FILES['file']['tmp_name'],'sliderImage/'.$new_name);
-
-		unlink("sliderImage/".$oldFile);
-
-		$update= "UPDATE tbl_sliderimage SET  image_name='$new_name' WHERE image_id='$id'";
-
-		$conn->query($update);
-
-		header("location:sliderImage.php?update=success");
-	}else{
-		header("location:updateSliderImage.php?file=fail");
-	}
-
-}
 ?>
