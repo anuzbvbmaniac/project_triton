@@ -5,7 +5,7 @@ $query_check = "SELECT * FROM tbl_bachelorFaculty WHERE faculty='BSW'";
 $result = $conn->query( $query_check );
 $data = $result->fetch_array();
 ?>
-<div class="image"> <img src="../../cpanel/bachelorFacultyImage/<?php echo $data['featured_image']?>"> </div>
+<div class="image"> <img src="../../administration/bachelorFacultyImage/<?php echo $data['featured_image']?>"> </div>
 <div class="about">
   <div class="container">
     <div class="row">

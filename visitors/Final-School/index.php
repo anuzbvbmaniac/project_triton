@@ -16,20 +16,20 @@ include('header.php');
 		$result = $conn->query( $query_check );
 		$data=$result->fetch_array();
 		?>
-		<div class="item active"> <img src="../../cpanel/sliderImage/<?php echo $data['image_name']?>" alt="First slide"> </div> 
+		<div class="item active"> <img src="../../administration/sliderImage/<?php echo $data['image_name']?>" alt="First slide"> </div> 
 		<?php
 		$query_check = "SELECT * FROM tbl_sliderImage WHERE level_image=1 AND image_id=2";
 		$result = $conn->query( $query_check );
 		$data1=$result->fetch_array();
 		?>
 
-		<div class="item"> <img src="../../cpanel/sliderImage/<?php echo $data1['image_name']?>" alt="Second slide"> </div>
+		<div class="item"> <img src="../../administration/sliderImage/<?php echo $data1['image_name']?>" alt="Second slide"> </div>
 		<?php
 		$query_check = "SELECT * FROM tbl_sliderImage WHERE level_image=1 AND image_id=3";
 		$result = $conn->query( $query_check );
 		$data2=$result->fetch_array();
 		?>
-		<div class="item"> <img src="../../cpanel/sliderImage/<?php echo $data2['image_name']?>" alt="Third slide"> </div>
+		<div class="item"> <img src="../../administration/sliderImage/<?php echo $data2['image_name']?>" alt="Third slide"> </div>
 
 	</div>
 	<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -50,7 +50,7 @@ include('header.php');
 			while($data=$result->fetch_array()){
 				?>
 				<div class="col-md-4 text-center">
-					<div class="contain"> <img src="../../cpanel/activityImage/<?php echo $data['icon']?>">
+					<div class="contain"> <img src="../../administration/activityImage/<?php echo $data['icon']?>">
 						<h3><?php echo $data['activity']?></h3>
 						<p><?php echo $data['activity_detail']?></p>
 					</div>
@@ -73,7 +73,7 @@ include('header.php');
 				<p class="about-p"><?php echo $data['msg']?> </p>
 				<button  type="button" class="btn btn-primary btn-lg"><a href="about.php">Read More</a></button>
 			</div>
-			<div class="col-lg-6"> <img src="../../cpanel/welcomeMessageImage/<?php echo $data['image']?>" class="about-img"> </div>
+			<div class="col-lg-6"> <img src="../../administration/welcomeMessageImage/<?php echo $data['image']?>" class="about-img"> </div>
 		</div>
 	</div>
 	<img src="img/header__top.png" class="cloud2"> </div>
@@ -87,7 +87,7 @@ include('header.php');
 				while($data=$result->fetch_array()){
 					?>
 					<div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-						<div class="card h-100"> <a href="news.php"><img class="card-img-top" src="../../cpanel/newsImage/<?php echo $data['featured_image']?>" alt=""></a>
+						<div class="card h-100"> <a href="news.php"><img class="card-img-top" src="../../administration/newsImage/<?php echo $data['featured_image']?>" alt=""></a>
 							<div class="card-body">
 								<h4 class="card-title"> <a href="news.php" class="news-title"><?php echo $data['news_heading']?></a> </h4>
 								<p class="card-text"><?php echo $data['news_content']?></p>
@@ -115,7 +115,7 @@ include('header.php');
 					$result = $conn->query( $query_check );
 					while($data=$result->fetch_array()){
 						?>
-						<div class="col-lg-3 col-sm-4 col-xs-6"><a title="<?php echo $data['description']?>" href="#"><img class="thumbnail img-responsive" src="../../cpanel/gallery/<?php echo $data['image_name']?>"></a></div>
+						<div class="col-lg-3 col-sm-4 col-xs-6"><a title="<?php echo $data['description']?>" href="#"><img class="thumbnail img-responsive" src="../../administration/gallery/<?php echo $data['image_name']?>"></a></div>
 						<?php
 					}
 					?>

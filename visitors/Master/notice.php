@@ -38,7 +38,7 @@ if (empty($data)){
 								<?php
 							}else{
 								?>
-								<h3><a href="../../cpanel/noticeFiles/<?php echo $data['notice_file']?>"><?php  echo $data['notice'];?></a><i> ( File Attached)</i></h3>
+								<h3><a href="../../administration/noticeFiles/<?php echo $data['notice_file']?>"><?php  echo $data['notice'];?></a><i> ( File Attached)</i></h3>
 								<?php
 							}
 							?>

@@ -20,7 +20,7 @@ include('header.php');
      </div>
      
      <div class="col-lg-6">
-       <img src="../../cpanel/aboutUsImage/<?php echo $data['featured_image']?>" class="about-img">
+       <img src="../../administration/aboutUsImage/<?php echo $data['featured_image']?>" class="about-img">
      </div>
    </div>
  </div>

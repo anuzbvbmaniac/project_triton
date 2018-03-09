@@ -20,7 +20,7 @@ $data = $result->fetch_array();
      </div>
 
      <div class="col-lg-6">
-       <img src="../../cpanel/plusTwoStreamImage/<?php echo $data['featured_image']?>" class="about-img">
+       <img src="../../administration/plusTwoStreamImage/<?php echo $data['featured_image']?>" class="about-img">
      </div>
    </div>
  </div>

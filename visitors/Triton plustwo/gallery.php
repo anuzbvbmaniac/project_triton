@@ -23,7 +23,7 @@ include('header.php');
    $result = $conn->query( $query_check );
    while($data=$result->fetch_array()){
     ?>
-    <div class="col-lg-4 col-sm-4 col-xs-6 wow slideInRight"><a title="<?php echo $data['description']?>" href="#"><img class="thumbnail img-responsive" src="../../cpanel/gallery/<?php echo $data['image_name']?>"></a></div>
+    <div class="col-lg-4 col-sm-4 col-xs-6 wow slideInRight"><a title="<?php echo $data['description']?>" href="#"><img class="thumbnail img-responsive" src="../../administration/gallery/<?php echo $data['image_name']?>"></a></div>
     <?php
   }
   ?>

@@ -15,19 +15,19 @@ include('header.php');
     $result = $conn->query( $query_check );
     $data=$result->fetch_array();
     ?>
-    <div class="item active"> <img src="../../cpanel/sliderImage/<?php echo $data['image_name']?>" alt="First slide"> </div>
+    <div class="item active"> <img src="../../administration/sliderImage/<?php echo $data['image_name']?>" alt="First slide"> </div>
     <?php
     $query_check = "SELECT * FROM tbl_sliderimage WHERE level_image=2 AND image_id=5";
     $result = $conn->query( $query_check );
     $data1=$result->fetch_array();
     ?>
-    <div class="item"> <img src="../../cpanel/sliderImage/<?php echo $data1['image_name']?>" alt="Second slide"> </div>
+    <div class="item"> <img src="../../administration/sliderImage/<?php echo $data1['image_name']?>" alt="Second slide"> </div>
     <?php
     $query_check = "SELECT * FROM tbl_sliderimage WHERE level_image=2 AND image_id=6";
     $result = $conn->query( $query_check );
     $data2=$result->fetch_array();
     ?>
-    <div class="item"> <img src="../../cpanel/sliderImage/<?php echo $data2['image_name']?>" alt="Third slide"> </div>
+    <div class="item"> <img src="../../administration/sliderImage/<?php echo $data2['image_name']?>" alt="Third slide"> </div>
   </div>
   <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control"
   href="#carousel-example-generic" data-slide="next"><span class="glyphicon glyphicon-chevron-right"> </span> </a> </div>
@@ -88,7 +88,7 @@ include('header.php');
             <div class="col-lg-4 wow slideInLeft">
               <a href="news.php">
                 <div class="card">
-                  <img src="../../cpanel/newsImage/<?php echo $data['featured_image']?>">
+                  <img src="../../administration/newsImage/<?php echo $data['featured_image']?>">
                   <h4><?php echo $data['news_heading']?></h4>
                   <p><?php echo $data['news_content']?></p>
                 </div>
@@ -192,7 +192,7 @@ include('header.php');
            $result = $conn->query( $query_check );
            while($data=$result->fetch_array()){
             ?>
-            <div class="col-lg-4 col-sm-4 col-xs-6 wow slideInRight"><a title="<?php echo $data['description']?>" href="gallery.php"><img class="thumbnail img-responsive" src="../../cpanel/gallery/<?php echo $data['image_name']?>"></a></div>
+            <div class="col-lg-4 col-sm-4 col-xs-6 wow slideInRight"><a title="<?php echo $data['description']?>" href="gallery.php"><img class="thumbnail img-responsive" src="../../administration/gallery/<?php echo $data['image_name']?>"></a></div>
 
             <?php
           }

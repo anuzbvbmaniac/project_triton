@@ -29,7 +29,7 @@ include('header.php');
                 <div class="col-lg-4 wow slideInLeft">
                     <a ></a>
                     <div class="card">
-                        <img src="../../cpanel/newsImage/<?php echo $data['featured_image']?>">
+                        <img src="../../administration/newsImage/<?php echo $data['featured_image']?>">
                         <h4><?php echo $data['news_heading']?></h4>
                         <p><?php echo $data['news_content']?></p>
                     </div>

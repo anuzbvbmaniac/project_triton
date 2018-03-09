@@ -28,7 +28,7 @@ if (empty($data)){
 			<div class="container">
 				<div class="row">
 					
-					<div class="col-lg-6"><img class="" src="../../cpanel/newsImage/<?php echo $data['featured_image']?>" alt="Image Unavailable"> </div>
+					<div class="col-lg-6"><img class="" src="../../administration/newsImage/<?php echo $data['featured_image']?>" alt="Image Unavailable"> </div>
 					
 					<div class="col-lg-6">
 						<h3><?php echo $data['news_heading']?></h3>

@@ -8,7 +8,7 @@ include('header.php');
      $data = $result->fetch_array();
      ?>
 <div class="image">
-	<img src="../../cpanel/aboutUsImage/<?php echo $data['featured_image']?>">
+	<img src="../../administration/aboutUsImage/<?php echo $data['featured_image']?>">
 </div>
 
 <div class="about">

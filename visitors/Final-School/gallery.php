@@ -33,7 +33,7 @@ if (empty($data)){
      while($data=$result->fetch_array()){
       ?>
       <div class="col-lg-3 col-sm-4 col-xs-6">
-        <a title="<?php echo $data['description']?>" href="#"><img class="thumbnail img-responsive" src="../../cpanel/gallery/<?php echo $data['image_name']?>"></a>
+        <a title="<?php echo $data['description']?>" href="#"><img class="thumbnail img-responsive" src="../../administration/gallery/<?php echo $data['image_name']?>"></a>
       </div>
       <?php
     }
